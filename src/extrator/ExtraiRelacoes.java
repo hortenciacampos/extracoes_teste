@@ -92,6 +92,11 @@ public class ExtraiRelacoes {
 				}
 
 				for(Point i: extractions){
+					
+					String arg1 = ""; 
+					String rel = ""; 
+					String arg2 = ""; 
+					
 					// FIND THE NEAREST LEFT CHUNK (IF EXISTS)
 					for(Point l: np_extractions){
 						if(l.y < i.x){
@@ -101,19 +106,23 @@ public class ExtraiRelacoes {
 						}
 					}
 					// PRINT THE NEAREST LEFT CHUNK
-					System.out.print("arg1: ");
+		//			System.out.print("arg1: ");
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-						System.out.print(vetor[0][j]+" ");
-					}
-					System.out.print(" | "+"rel: ");
-					// PRINT THE RELATION
-					for(int j=i.x; j <= i.y ; j++){
+		//				System.out.print(vetor[0][j]+" ");
+			//			if (!(vetor[0][j].equals(".null")) && !(vetor[0][j].equals("null")))
+							arg1 = arg1+" "+vetor[0][j];
+			//			System.out.println(arg1);
 
-							System.out.print(vetor[0][j]+" ");
-				//		}
-						
 					}
-					System.out.print(" | ");
+					
+		//			System.out.print(" | "+"rel: ");
+					// PRINT THE RELATION
+					for(int j=i.x; j <= i.y ; j++){				
+		//				System.out.print(vetor[0][j]+" ");
+						rel = rel+" "+vetor[0][j];
+
+					}
+			//		System.out.print(" | ");
 					// FIND THE NEAREST RIGHT CHUNK (IF EXISTS)
 					for(Point r: np_extractions){
 						if(r.x>i.y){
@@ -133,52 +142,18 @@ public class ExtraiRelacoes {
 						}
 					}
 					// PRINT THE NEAREST RIGHT CHUNK
-					System.out.print("arg2: ");
+			//		System.out.print("arg2: ");
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-				/**		if (vetor[0][j].equals("de")){
-							if (vetor[0][j+1].equals("a")){
-								System.out.print("da ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("o")){
-								System.out.print("do ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("as")){
-								System.out.print("das ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("os")){
-								System.out.print("dos ");
-								j++;
-							}
-							else{
-								System.out.print(vetor[0][j]+" ");
-							}
-						}
-						else if (vetor[0][j].equals("em")){
-							if (vetor[0][j+1].equals("a")){
-								System.out.print("na ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("o")){
-								System.out.print("no ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("as")){
-								System.out.print("nas ");
-								j++;
-							}
-							else if (vetor[0][j+1].equals("os")){
-								System.out.print("nos ");
-								j++;
-							}
-						}
-						else{ **/
-							System.out.print(vetor[0][j]+" ");
-				//		}
+			//			System.out.print(vetor[0][j]+" ");
+			//			if (!(vetor[0][j].equals(".null")))
+							arg2 = arg2+" "+vetor[0][j];
+			//			System.out.println(arg2);
 						
 					}
+					if (!(arg1.equals(" null")) && !(arg2.equals(" null")) && !(arg1.equals(" .null")) && !(arg2.equals(" .null") )){
+						System.out.println("Arg1: "+arg1+" | Rel: "+rel+" | Arg2: "+arg2);
+					}
+
 					System.out.println();
 				}
 			}
