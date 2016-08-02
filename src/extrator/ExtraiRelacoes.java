@@ -145,7 +145,7 @@ public class ExtraiRelacoes {
 			//		System.out.print("arg2: ");
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
 			//			System.out.print(vetor[0][j]+" ");
-						if (!(vetor[0][j].equals(".null")))
+			//			if (!(vetor[0][j].equals(".null")))
 							arg2 = arg2+" "+vetor[0][j];
 			//			System.out.println(arg2);
 						
