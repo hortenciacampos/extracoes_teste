@@ -102,30 +102,27 @@ public class ExtraiRelacoes {
 						if(l.y < i.x){
 							chunkIndexes = l;
 						} else {
-							break;
+							break;							
 						}
 					}
 					// PRINT THE NEAREST LEFT CHUNK
-		//			System.out.print("arg1: ");
+
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-		//				System.out.print(vetor[0][j]+" ");
-			//			if (!(vetor[0][j].equals(".null")) && !(vetor[0][j].equals("null")))
-							arg1 = arg1+" "+vetor[0][j];
+						arg1 = arg1+" "+vetor[0][j];
 			//			System.out.println(arg1);
 
 					}
 					
-		//			System.out.print(" | "+"rel: ");
+
 					// PRINT THE RELATION
-					for(int j=i.x; j <= i.y ; j++){				
-		//				System.out.print(vetor[0][j]+" ");
+					for(int j=i.x; j <= i.y ; j++){		
 						rel = rel+" "+vetor[0][j];
 
 					}
-			//		System.out.print(" | ");
+
 					// FIND THE NEAREST RIGHT CHUNK (IF EXISTS)
 					for(Point r: np_extractions){
-						if(r.x>i.y){
+						if(r.x>i.y){							
 							chunkIndexes = r;
 							break;
 						}
@@ -142,11 +139,8 @@ public class ExtraiRelacoes {
 						}
 					}
 					// PRINT THE NEAREST RIGHT CHUNK
-			//		System.out.print("arg2: ");
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-			//			System.out.print(vetor[0][j]+" ");
-			//			if (!(vetor[0][j].equals(".null")))
-							arg2 = arg2+" "+vetor[0][j];
+						arg2 = arg2+" "+vetor[0][j];
 			//			System.out.println(arg2);
 						
 					}
@@ -156,6 +150,7 @@ public class ExtraiRelacoes {
 
 			//		System.out.println();
 				}
+				System.out.println();
 			}
 	
 	

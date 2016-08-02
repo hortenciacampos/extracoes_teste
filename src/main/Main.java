@@ -2,25 +2,39 @@ package main;
 
 import java.io.IOException;
 import extrator.*;
-import sentencas.CarregaSentencas;;
+import sentencas.CarregaSentencas;
 
 
+
+import java.util.ArrayList;
+
+/**
+ * @author george
+ */
 public class Main {
-	public static void main(String[] args) throws IOException {
-		CarregaSentencas load = new CarregaSentencas();
-    	String sentencas = new String();
-		
-		AnalisaSentenca ext = new AnalisaSentenca();
-  	
-    	sentencas =	load.leitor("acessorios/sentencasExemplo.txt");
+    public static void main(String[] args) {
     	
-    	String[][] vetor = ext.analisaSentenca(sentencas);
-    			
-		ExtraiRelacoes analisador = new ExtraiRelacoes();
-
-		analisador.parse(vetor);
-
-
-	}
-
+    	AnalisaSentenca ext = new AnalisaSentenca();
+        
+        ExtraiRelacoes analisador = new ExtraiRelacoes();
+        
+        CarregaSentencas load = new CarregaSentencas();
+        ArrayList<String> sentences;
+        try {
+            sentences = load.leitor("acessorios/sentencasExemplo.txt");
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            sentences = new ArrayList<>();
+        }
+        
+        for (String line : sentences) {
+            //System.out.print(n++ + " ");
+            if (line != null) {
+            	String[][] vetor = ext.analisaSentenca(line);
+ 
+                analisador.parse(vetor);
+            }
+        }
+    }
 }

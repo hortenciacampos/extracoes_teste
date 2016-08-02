@@ -38,7 +38,7 @@ public class AnalisaSentenca {
     	    		
 //    	    		System.out.print(comeca+"-"+termina);
     	    		
-//    	    		System.out.println(sentence.getText());
+    	    		System.out.println("Sentenca: "+sentence.getText());
     	    		// Chunks
     	    		for (Chunk chunk : sentence.getChunks()) { // lista de chunks
     	    			// Tokens
@@ -57,9 +57,9 @@ public class AnalisaSentenca {
 
         		    	}
     	    		}
-    	    	//	palavra.add(" ");
-    	    //		classe.add("adj");
-    	   // 		ch.add("B-NP");
+    	    		palavra.add("null");
+    	    		classe.add("adj");
+    	    		ch.add("B-NP");
 
     	   // 		System.out.println(palavra.get(palavra.size()-1));
     	    	}
