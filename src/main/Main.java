@@ -34,6 +34,7 @@ public class Main {
             	String[][] vetor = ext.analisaSentenca(line);
  
                 analisador.parse(vetor);
+               
             }
         }
     }

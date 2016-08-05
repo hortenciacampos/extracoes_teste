@@ -25,7 +25,7 @@ public class AnalisaSentenca {
     	ArrayList<String> palavra = new ArrayList<String>();
     	ArrayList<String> classe = new ArrayList<String>();
     	ArrayList<String> ch = new ArrayList<String>();
-
+    	String teste = "";
 
     	Document document = new DocumentImpl();
     	document.setText(sentencas);  //cria um documento com as setenças extraídas do arquivo txt
@@ -38,24 +38,30 @@ public class AnalisaSentenca {
     	    		
 //    	    		System.out.print(comeca+"-"+termina);
     	    		
-    	    		System.out.println("Sentenca: "+sentence.getText());
+    	    	//	System.out.println("Sentenca: "+sentence.getText());
     	    		// Chunks
+    	    		
     	    		for (Chunk chunk : sentence.getChunks()) { // lista de chunks
     	    			// Tokens
+    	    			
     		    		for (Token token : chunk.getTokens()) { // lista de tokens
 
     		    			palavra.add(token.getLexeme());   // palavra da sentença
         		    		classe.add(token.getPOSTag());    // classe gramatical da palavra
         		    		ch.add(token.getChunkTag());      // chunk da palavra
-
+        		    		
+        		    		teste = teste+token.getLexeme()+"["+token.getPOSTag()+"] ";
 
     		    	//		System.out.println(token.getLexeme()+"="+token.getPOSTag()+"="+token.getChunkTag());
+        		    		
+        		    		
 
     		    	//		System.out.println(token.getLexeme()+" |"+token.getPOSTag()+" |"+chunk.getStart()+" |"+chunk.getEnd());
 
     	//	    			System.out.println(token.getPOSTag());
 
         		    	}
+    		    		
     	    		}
     	    		palavra.add("null");
     	    		classe.add("adj");
@@ -63,12 +69,13 @@ public class AnalisaSentenca {
 
     	   // 		System.out.println(palavra.get(palavra.size()-1));
     	    	}
+    	    	System.out.println("SENTENÇA: "+teste);
     	    	
 
 	    		
     	    	String [][] vetor = new String [3][palavra.size()];   // cria um vetor e insere as 3 listas nele
 	    		for (int j=0; j<classe.size();j++){
-	    			
+	    		/*	
     			if (palavra.get(j).equals("em") ){
 	    				if (palavra.get(j+1).equals("o") ){
 	    					vetor[0][j] = "no";
@@ -142,7 +149,7 @@ public class AnalisaSentenca {
 	    					j++;
 	    				}
 	    			} 
-	    			
+	    			*/
 	    			
 	    			vetor[0][j] = palavra.get(j);
 	    			vetor[1][j] = classe.get(j);

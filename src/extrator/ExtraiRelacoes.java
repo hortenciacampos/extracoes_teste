@@ -108,7 +108,7 @@ public class ExtraiRelacoes {
 					// PRINT THE NEAREST LEFT CHUNK
 
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-						arg1 = arg1+" "+vetor[0][j];
+						arg1 = arg1+" "+vetor[0][j]+"["+vetor[2][j]+"]";
 			//			System.out.println(arg1);
 
 					}
@@ -116,7 +116,8 @@ public class ExtraiRelacoes {
 
 					// PRINT THE RELATION
 					for(int j=i.x; j <= i.y ; j++){		
-						rel = rel+" "+vetor[0][j];
+				//		rel = rel+" "+vetor[0][j];
+						rel = rel+" "+vetor[0][j]+"["+vetor[2][j]+"]";
 
 					}
 
@@ -139,14 +140,22 @@ public class ExtraiRelacoes {
 						}
 					}
 					// PRINT THE NEAREST RIGHT CHUNK
+			//		System.out.println("arg2: ");
 					for(int j=chunkIndexes.x; j <= chunkIndexes.y ; j++){
-						arg2 = arg2+" "+vetor[0][j];
+			//			arg2 = arg2+" "+vetor[0][j];
+						arg2 = arg2+" "+vetor[0][j]+"["+vetor[2][j]+"]";
 			//			System.out.println(arg2);
+				//		System.out.println(vetor[0][j]+" - "+vetor[2][j]);
 						
 					}
-					if (!(arg1.equals(" null")) && !(arg2.equals(" null")) && !(arg1.equals(" .null")) && !(arg2.equals(" .null") )){
-						System.out.println("Arg1: "+arg1+" | Rel: "+rel+" | Arg2: "+arg2);
-					}
+			//		if (!(arg1.equals(" null")) && !(arg2.equals(" null")) && !(arg1.equals(" .null")) && !(arg2.equals(" .null") )){
+			//			System.out.println("ARG1: "+arg1+" || REL: "+rel+" || ARG2: "+arg2);
+						System.out.println("ARG1: "+arg1);
+						System.out.println("REL: "+rel);
+						System.out.println("ARG2: "+arg2);
+						
+						
+			//		}
 
 			//		System.out.println();
 				}
