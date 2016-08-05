@@ -149,14 +149,14 @@ public class ExtraiRelacoes {
 				//		System.out.println(vetor[0][j]+" - "+vetor[2][j]);
 						
 					}
-			//		if (!(arg1.equals(" null")) && !(arg2.equals(" null")) && !(arg1.equals(" .null")) && !(arg2.equals(" .null") )){
+					if (!(arg1.equals(" null")) && !(arg2.equals(" null")) && !(arg1.equals(" .null")) && !(arg2.equals(" .null") )){
 						System.out.println("ARG1: "+arg1+" | REL: "+rel+" | ARG2: "+arg2);
 			//			System.out.println("ARG1: "+arg1);
 			//			System.out.println("REL: "+rel);
 			//			System.out.println("ARG2: "+arg2);
 						
 						
-			//		}
+					}
 
 			//		System.out.println();
 				}
