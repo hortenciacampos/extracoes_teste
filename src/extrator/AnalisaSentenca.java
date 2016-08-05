@@ -25,7 +25,8 @@ public class AnalisaSentenca {
     	ArrayList<String> palavra = new ArrayList<String>();
     	ArrayList<String> classe = new ArrayList<String>();
     	ArrayList<String> ch = new ArrayList<String>();
-    	String teste = "";
+    	String saida1 = "";
+    	String saida2 = "";
 
     	Document document = new DocumentImpl();
     	document.setText(sentencas);  //cria um documento com as setenças extraídas do arquivo txt
@@ -34,11 +35,11 @@ public class AnalisaSentenca {
     	
     	    	for (Sentence sentence : document.getSentences()) { // lista de sentenças
     //	    		int comeca = sentence.getStart();
-   // 	    		int termina = sentence.getEnd();
+    //	    		int termina = sentence.getEnd();
     	    		
-//    	    		System.out.print(comeca+"-"+termina);
+   // 	    		System.out.print("Começa: "+comeca+"- Termina:"+termina);
     	    		
-    	    	//	System.out.println("Sentenca: "+sentence.getText());
+    	    		System.out.println("Sentenca: "+sentence.getText());
     	    		// Chunks
     	    		
     	    		for (Chunk chunk : sentence.getChunks()) { // lista de chunks
@@ -50,8 +51,8 @@ public class AnalisaSentenca {
         		    		classe.add(token.getPOSTag());    // classe gramatical da palavra
         		    		ch.add(token.getChunkTag());      // chunk da palavra
         		    		
-        		    		teste = teste+token.getLexeme()+"["+token.getPOSTag()+"] ";
-
+        		    		saida1 = saida1+token.getLexeme()+"["+token.getPOSTag()+"] ";
+        		    		saida2 = saida2+token.getLexeme()+"["+token.getChunkTag()+"]["+chunk.getStart()+","+chunk.getEnd()+"] ";
     		    	//		System.out.println(token.getLexeme()+"="+token.getPOSTag()+"="+token.getChunkTag());
         		    		
         		    		
@@ -69,13 +70,13 @@ public class AnalisaSentenca {
 
     	   // 		System.out.println(palavra.get(palavra.size()-1));
     	    	}
-    	    	System.out.println("SENTENÇA: "+teste);
-    	    	
+    	    	System.out.println("Tags: "+saida1);
+    	    	System.out.println("Chunks: "+saida2);
 
 	    		
     	    	String [][] vetor = new String [3][palavra.size()];   // cria um vetor e insere as 3 listas nele
 	    		for (int j=0; j<classe.size();j++){
-	    		/*	
+	    			
     			if (palavra.get(j).equals("em") ){
 	    				if (palavra.get(j+1).equals("o") ){
 	    					vetor[0][j] = "no";
@@ -149,7 +150,7 @@ public class AnalisaSentenca {
 	    					j++;
 	    				}
 	    			} 
-	    			*/
+	    			
 	    			
 	    			vetor[0][j] = palavra.get(j);
 	    			vetor[1][j] = classe.get(j);
